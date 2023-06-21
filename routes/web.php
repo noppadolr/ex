@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Demo\DemoController;
+use App\Http\Controllers\AuthController;
+
 
 /*
 
@@ -13,7 +15,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -37,4 +39,12 @@ Route::controller(DemoController::class)->group(function(){
     Route::get('/about','about')->name('about.page');
     Route::get('/contact','contact')->name('contact.page');
 });
-//
+
+
+Route::controller(AuthController::class)->group(function(){
+    Route::get('/admin/logout','AdminLogout')->name('AdminLogout');
+    Route::get('/admin/login','AdminLoginView')->name('AdminLoginView');
+//    Route::get('/admin/auth','authenticate')->name('authenticate');
+});
+
+Route::post('admin/auth', [AuthController::class, 'authenticate'])->name('authenticate');
