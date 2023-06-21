@@ -73,9 +73,8 @@
 
                                              {{ Session::get('email') }}
 
-                                         @endif
-                                             "
-{{-- เอาอีเมลค่าเดิมมาใส่ให้                                      --}}
+                                         @endif"
+                                        {{-- เอาอีเมลค่าเดิมมาใส่ให้ --}}
                                        required="" placeholder="Username">
 
                             </div>
@@ -131,7 +130,7 @@
                                 <a href="" class="text-muted"><i class="mdi mdi-lock"></i> Forgot your password?</a>
                             </div>
                             <div class="col-sm-5 mt-3">
-                                <a href="auth-register.html" class="text-muted"><i class="mdi mdi-account-circle"></i> Create an account</a>
+                                <a href="" class="text-muted"><i class="mdi mdi-account-circle"></i> Create an account</a>
                             </div>
                         </div>
                     </form>
