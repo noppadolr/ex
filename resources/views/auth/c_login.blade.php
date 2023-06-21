@@ -75,11 +75,12 @@
 
                                          @endif
                                              "
+{{-- เอาอีเมลค่าเดิมมาใส่ให้                                      --}}
                                        required="" placeholder="Username">
 
                             </div>
                         </div>
- 
+
                             @if(Session::has('efail'))
                                 <div class="form-group mb-3 row">
                                     <div class="col-12">
