@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 
 
 /*
@@ -40,7 +41,7 @@ Route::controller(DemoController::class)->group(function(){
     Route::get('/contact','contact')->name('contact.page');
 });
 
-
+//AuthController Route
 Route::controller(AuthController::class)->group(function(){
     Route::get('/admin/logout','AdminLogout')->name('AdminLogout');
     Route::get('/admin/login','AdminLoginView')->name('AdminLoginView');
@@ -48,3 +49,10 @@ Route::controller(AuthController::class)->group(function(){
 });
 
 Route::post('admin/auth', [AuthController::class, 'authenticate'])->name('authenticate');
+
+//AdminController Route
+Route::controller(AdminController::class)->group(function (){
+    Route::get('/admin/profile/view','AdminProfileView')->name('admin.profile.view');
+    Route::post('/store/profile','StoreProfile')->name('StoreProfile');
+
+});

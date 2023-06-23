@@ -57,7 +57,7 @@
                 <!-- End Page-content -->
 
                 <!--Footer -->
-@include('admin.body.footer')
+                @include('admin.body.footer')
 
 
                 <!-- End Footer -->

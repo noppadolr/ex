@@ -40,8 +40,13 @@
 
                 <div class="p-3">
 
-
                         <form class="form-horizontal mt-3" action="{{route('authenticate')}}" method="POST" >
+                            @if(Session::has('error'))
+
+                            {{ Session::get('error') }}
+        
+                            @endif
+        
 {{--                            @if(Session::has('email'))--}}
 {{--                                <div class="alert alert-info">{{Session::get('email')}}</div>--}}
 {{--                            @endif--}}
@@ -69,24 +74,25 @@
 
                                 <input class="form-control" id="email" name="email" type="email"
                                        value="
-                                         @if(Session::has('email'))
+                                         @if(Session::has('emaill'))
 
-                                             {{ Session::get('email') }}
+                                             {{ Session::get('emaill') }}
 
                                          @endif"
                                         {{-- เอาอีเมลค่าเดิมมาใส่ให้ --}}
-                                       required="" placeholder="Username">
-
+                                       required="" placeholder="Email">
                             </div>
                         </div>
 
-                            @if(Session::has('efail'))
-                                <div class="form-group mb-3 row">
-                                    <div class="col-12">
-                                        <div class="alert alert-danger">{{ Session::get('efail') }}</div>
-                                    </div>
-                                </div>
-                            @endif
+                        @if(Session::has('efail'))
+                        <div class="form-group mb-3 row">
+                            <div class="col-12">
+                                <div class="alert alert-danger">{{ Session::get('efail') }}</div>
+                            </div>
+                        </div>
+                        @endif
+
+
 
                         <div class="form-group mb-3 row">
 
