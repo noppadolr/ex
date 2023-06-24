@@ -54,5 +54,7 @@ Route::post('admin/auth', [AuthController::class, 'authenticate'])->name('authen
 Route::controller(AdminController::class)->group(function (){
     Route::get('/admin/profile/view','AdminProfileView')->name('admin.profile.view');
     Route::post('/store/profile','StoreProfile')->name('StoreProfile');
+    Route::get('/change/password/view','ChangePasswordView')->name('ChangePasswordView');
+    Route::post('/change/password','ChangePassword')->name('ChangePassword');
 
 });

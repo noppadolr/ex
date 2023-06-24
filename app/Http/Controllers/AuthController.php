@@ -17,10 +17,15 @@ class AuthController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+        $notification=array();
+        $notification = array(
+            'message' => 'User Logout Successfully',
+            'alert-type' => 'info'
+        );
 
-        return redirect('admin/login');
+        return redirect('admin/login')->with($notification);
     }
-
+ 
     //End AdminLogout method
 
     public function AdminLoginView()
@@ -40,8 +45,12 @@ class AuthController extends Controller
             if(Hash::check($request->password,$user->password)){
                 if(Auth::attempt($validate))
                 {
+                    $notification = array(
+                        'message' => 'User Loin Successfully',
+                        'alert-type' => 'success'
+                    );
                       $request->session()->regenerate();
-                      return redirect()->intended('dashboard');
+                      return redirect()->intended('dashboard')->with($notification);
 
                 }else
                 {
