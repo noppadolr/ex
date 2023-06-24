@@ -65,7 +65,8 @@ class AdminController extends Controller
 
 
 
-        $validateData=$request->validate(
+        $validateData=$request->validate( 
+            
             [
                 'OldPassword' =>['required',new MatchOldPassword],
                 // 'required',
