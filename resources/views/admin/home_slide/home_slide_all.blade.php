@@ -16,7 +16,7 @@
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            {{--                                <li class="breadcrumb-item"><a href="">Upcube</a></li>--}}
+                            {{-- <liclass="breadcrumb-item"><ahref="">Upcube</a></li> --}}
                             <li class="breadcrumb-item active"> <a href="{{route('dashboard')}}">Dashboard</a> </li>
                             <li class="breadcrumb-item active">Edit Hoem Slide</li>
                         </ol>
@@ -37,8 +37,9 @@
                                 <h4 class="card-title"></h4>
                                 <p class="card-title-desc"></p>
 
-                                <form method="post" action="" enctype="multipart/form-data">
+                                <form method="post" action="{{ route('update.slider') }}" enctype="multipart/form-data">
                                     @csrf
+                                    <input type="hidden" name="id" value="{{ $homeslide->id }}" />
 
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Title</label>
@@ -58,7 +59,7 @@
                                 <div class="row mb-3">
                                     <label for="example-email-input" class="col-sm-2 col-form-label">Video URL</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" type="text" name="short_title" value="{{$homeslide->video_url}}" id="short_title">
+                                        <input class="form-control" type="text" name="video_url" value="{{$homeslide->video_url}}" id="video_url">
                                     </div>
                                 </div>
                                 <!-- end row -->
@@ -74,7 +75,7 @@
                                     <div class="row mb-3">
                                         <label for="example-text-input" class="col-sm-2 col-form-label">  </label>
                                         <div class="col-sm-10">
-                                            <img id="showImage"  class="rounded img-fluid" style="width: auto;height: 265px;" src="{{ (!empty($homeslide->home_slide))? url('upload/home_slide/'.$homeslide->home_slide):url('upload/no_image.jpg') }}" alt="Card image cap">
+                                            <img id="showImage"  class="rounded img-fluid" style="width: auto;height: 265px;" src="{{ (!empty($homeslide->home_slide))? url($homeslide->home_slide):url('upload/no_image.jpg') }}" alt="Card image cap">
                                         </div>
                                     </div>
 
