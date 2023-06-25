@@ -56,10 +56,6 @@
                                     </div>
                                 </div>
                                 <!-- end row -->
-
-
-
-
                                 <div class="row mb-3">
                                     <label for="example-email-input" class="col-sm-2 col-form-label">Short Description</label>
                                     <div class="col-sm-10">
@@ -67,12 +63,6 @@
                                     </div>
                                 </div>
                                 <!-- end row -->
-
-
-
-
-
-
                                 <div class="row mb-3">
                                     <label for="example-email-input" class="col-sm-2 col-form-label">Long Description</label>
                                     <div class="col-sm-10">
@@ -91,18 +81,12 @@
                                     </div>
                                 </div>
                                 <!-- end row -->
-
-
-
                                 <div class="row mb-3">
                                         <label for="example-text-input" class="col-sm-2 col-form-label">  </label>
                                         <div class="col-sm-10">
                                             <img id="showImage"  class="rounded img-fluid" style="width: auto;height: 265px;" src="{{ (!empty($about->about_image))? url($about->about_image):url('upload/no_image.jpg') }}" alt="Card image cap">
                                         </div>
                                     </div>
-
-
-
                                 <br>
                                     <input type="submit" class="btn btn-info waves-effect waves-light" value="Update About Page">
                                 </form>
@@ -114,12 +98,6 @@
                 </div>
 
             </div>
-
-
-
-
-
-
         </div>
         {{--end row--}}
     </div>
@@ -137,10 +115,4 @@
     });
 
 </script>
-
-
-
-
-
-
 @endsection
