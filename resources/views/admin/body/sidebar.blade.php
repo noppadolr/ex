@@ -35,10 +35,21 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-home-3-line"></i>
-                        <span>Hoem Slide Setup</span>
+                        <span>Home Slide Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('home.slide.view') }}">Home Slide</a></li>
+                        
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class=" ri-service-line"></i>
+                        <span>About Page Setup</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('about.page.view') }}">About Page</a></li>
                         
                     </ul>
                 </li>

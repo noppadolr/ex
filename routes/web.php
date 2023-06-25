@@ -6,6 +6,7 @@ use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\HomeSliderController;
+use App\Http\Controllers\Home\AboutController;
 
 
 /*
@@ -67,3 +68,10 @@ Route::controller(HomeSliderController::class)->group(function (){
 
 });
 
+
+//AboutController Route
+Route::controller(AboutController::class)->group(function (){
+    Route::get('/about/view','AboutePageView')->name('about.page.view');
+    Route::post('/update/about','UpdateAbout')->name('update.about');
+
+});
