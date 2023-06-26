@@ -38,6 +38,7 @@
                     </li>
                 </ul>
             </div>
+
             <div class="col-lg-6">
                 <div class="about__content">
                     <div class="section__title">

@@ -23,7 +23,7 @@ class AboutController extends Controller
 
     if($request->file('about_image')){
         $image = $request->file('about_image');
-        
+
         @unlink(public_path(About::find($id)->about_image));
         $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
 
@@ -51,7 +51,7 @@ class AboutController extends Controller
             'short_title' =>$request->short_title,
             'short_description'=>$request->short_description,
             'long_description'=>$request->long_description,
-            
+
         ]);
         $notification = array(
             'message' => 'About Page Updated without Image Successfully',
@@ -64,4 +64,12 @@ class AboutController extends Controller
 
 }
 //End UpdateSlider method
+
+public function HomeAbout()
+{
+    $about = About::find(1);
+    return view('frontend.about_page',compact('about'));
+}
+//End AboutView method
+
 }
