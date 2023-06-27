@@ -35,7 +35,7 @@
                             <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th style="text-align: center; vertical-align: middle;">#</th>
                                     <th>About Multi Image</th>
                                     <th>Action</th>
 
@@ -45,10 +45,10 @@
                                 @php($i=1)
                                 @foreach($allMultiImage as $item)
                                 <tr>
-                                    <td>{{$i++}}</td>
-                                    <td> <img src="{{ asset($item->multi_image) }}" style="width: 60px; height: 50px"></td>
+                                    <td style="text-align: center; vertical-align: middle;">{{$i++}}</td>
+                                    <td> <img src="{{ asset($item->multi_image) }}" style="width: 60px; height: 50px" alt=""></td>
                                     <td>
-                                        <a href="" class="btn btn-info sm" title="Edit Data" > <i class="fas fa-edit"> </i> </a>
+                                        <a href="{{ route('edit.multi.image',$item->id) }}" class="btn btn-info sm" title="Edit Data" > <i class="fas fa-edit"> </i> </a>
                                         <a href="" class="btn btn-danger sm" title="Delete Data" > <i class="fas fa-trash-alt"> </i> </a>
 
 

@@ -22,9 +22,8 @@ class AboutController extends Controller
    //End AboutePageView method
 
    public function UpdateAbout(Request $request){
+
     $id = $request->id;
-
-
     if($request->file('about_image')){
         $image = $request->file('about_image');
 
@@ -111,5 +110,43 @@ public function AllMultiImage(){
 
 }
 //End AllMultiImage method
+
+public  function  EditMultiImage($id){
+       $MultiImage = MultiImage::findOrFail($id);
+       return view('admin.about_page.edit_multi_image',compact('MultiImage'));
+}
+//End EditMultiImage method
+
+public function  UpdateMultiImage(Request $request){
+    $id = $request->id;
+    if($request->file('multi_image')){
+        $image = $request->file('multi_image');
+
+        @unlink(public_path(MultiImage::find($id)->multi_image));
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+
+        Image::make($image)->resize(220,220)->save('upload/multiimage/'.$name_gen);
+        $save_url = 'upload/multiimage/'.$name_gen;
+
+        MultiImage::findOrFail($id)->update([
+            'multi_image'=>$save_url,
+            'updated_at'=>Carbon::now(),
+        ]);
+        $notification = array(
+            'message' => 'Multi Image Updated Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('all.multi.image')->with($notification);
+
+    }else
+    {
+        $notification = array(
+            'message' => 'Multi Image Nothing Change',
+            'alert-type' => 'info'
+        );
+        return redirect()->route('all.multi.image')->with($notification);
+    }
+}
+//End UpdateMultiImage method
 
 }
