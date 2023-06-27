@@ -39,7 +39,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('home.slide.view') }}">Home Slide</a></li>
-                        
+
                     </ul>
                 </li>
 
@@ -50,7 +50,8 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('about.page.view') }}">About Page</a></li>
-                        
+                        <li><a href="{{ route('about.multi.image') }}">About Multi Image</a></li>
+
                     </ul>
                 </li>
 

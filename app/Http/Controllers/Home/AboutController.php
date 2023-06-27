@@ -72,4 +72,8 @@ public function HomeAbout()
 }
 //End AboutView method
 
+public function AboutMultiImage(){
+       return view('admin.about_page.multiimage');
+}
+
 }
