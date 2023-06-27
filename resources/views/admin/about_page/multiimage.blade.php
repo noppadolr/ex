@@ -42,14 +42,14 @@
                                     <h4 class="card-title"></h4>
                                     <br>
 
-                                    <form method="post" action="{{ route('update.about') }}" enctype="multipart/form-data">
+                                    <form method="post" action="{{ route('store.multi.image') }}" enctype="multipart/form-data">
                                         @csrf
 {{--                                        <input type="hidden" name="id" value="{{ $about->id }}" />--}}
 
                                         <div class="row mb-3">
                                             <label for="example-url-input" class="col-sm-2 col-form-label">About Multi Image</label>
                                             <div class="col-sm-10">
-                                                <input class="form-control " type="file" name="multi_image" id="image">
+                                                <input class="form-control" multiple="" type="file" name="multi_image[]" id="image">
                                             </div>
                                         </div>
                                         <!-- end row -->
@@ -57,7 +57,7 @@
                                         <div class="row mb-3">
                                             <label for="example-text-input" class="col-sm-2 col-form-label">  </label>
                                             <div class="col-sm-10">
-                                                <img id="showImage"  class="rounded img-fluid"  src="{{ url('upload/no_image.jpg') }}" alt="Card image cap">
+                                                <img id="showImage"  class="rounded avatar-lg" style="height: 288px; width: 288px;" src="{{ url('upload/no_image.jpg') }}" alt="Card image cap">
                                             </div>
                                         </div>
                                         <br>
