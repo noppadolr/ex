@@ -102,9 +102,14 @@ public function StoreMultiImage(Request $request)
         'alert-type' => 'success'
     );
     return redirect()->back()->with($notification);
-
-
 }
 //End StoreMultiImage method
+
+public function AllMultiImage(){
+       $allMultiImage = MultiImage::all();
+       return view('admin.about_page.all_multiimage',compact('allMultiImage'));
+
+}
+//End AllMultiImage method
 
 }
