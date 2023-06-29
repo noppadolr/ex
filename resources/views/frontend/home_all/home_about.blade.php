@@ -33,9 +33,9 @@
                     </div>
                         </div>
                     <p class="desc">{{ $about->short_description }}</p>
-                    <a href="about.html" class="btn">Download my resume</a>
+                    <a href="" class="btn">Download my resume</a>
                 </div>
             </div>
         </div>
-    </div>
+
 </section>
