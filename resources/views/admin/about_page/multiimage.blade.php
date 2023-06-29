@@ -1,5 +1,5 @@
 @extends('admin.main')
-@section('content')
+@section('main')
     <script src="{{asset('jquery.min.js')}}"></script>
 
 
